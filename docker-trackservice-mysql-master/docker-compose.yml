@@ -1,0 +1,60 @@
+#version: '3'
+#services:
+#  databases:
+##  image: mongo
+#  ports:
+#    - "27017:27018"
+#  container_name: test-mongo
+#  volumes: ./usr/src/
+#  network_mode: host
+#  environment:
+#    MYSQL_ROOT_PASSWORD: root
+#    MYSQL_DATABASE: tset
+#    MYSQL_USER: app_root
+#    MYSQL_PASSWORD: root
+#  web:
+#    image: mongo
+##spring:
+## image:
+##build:
+##restart:
+##  netword_mode: host
+##  container_name: test-mongo
+##depends_on:
+##  - mongo
+##  ports:
+##  - 8082:8082
+##expose:
+##  - 8082
+#version: '3'
+#services:
+#  web:
+#    image: docker-mongodb
+#  db:
+#    image: mongo
+#    ports:
+#      - "8088:8088"
+#    environment:
+#      - MYSQL_ROOT_PASSWORD=password
+#      - MYSQL_USER=user
+#      - MYSQL_PASSWORD=password
+#      - MYSQL_DATABASE=demodb
+
+#version: "3"
+#services:
+#  mongodb:
+#    image: mongo
+#    container_name: mongodb-springboot
+#    restart: always
+#    volumes:
+#      - $HOME/data/:/data/db
+#  track-service:
+#    build: .
+#    ports:
+#      - 8088:8088
+#    depends_on:
+#      - mongodb
+#    links:
+#      - mongodb
+#    restart: always
+
